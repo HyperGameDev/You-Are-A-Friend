@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://c525tjxkruvkx"]
+
+[ext_resource type="Texture2D" uid="uid://cwh6x5humbib6" path="res://UI images/border_responses.png" id="1_ic5vo"]
+[ext_resource type="Texture2D" uid="uid://pjfi6yg147ka" path="res://UI images/border_responses_4.png" id="2_auakg"]
+[ext_resource type="Texture2D" uid="uid://cjtfel8y20vhk" path="res://UI images/border_responses_2.png" id="3_k1biq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67yl"]
+bg_color = Color(0.356863, 0, 0.0509804, 1)
+
+[node name="Dialogue" type="Panel"]
+y_sort_enabled = true
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 1.0
+anchor_right = 0.498
+anchor_bottom = 1.0
+offset_left = -487.696
+offset_top = -325.0
+offset_right = 488.304
+offset_bottom = -3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d67yl")
+
+[node name="Friend Dialogue" type="Panel" parent="."]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 17.0
+offset_right = 476.0
+offset_bottom = 310.0
+mouse_filter = 1
+
+[node name="Friend Name" type="Label" parent="Friend Dialogue"]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 31.0
+offset_top = 13.0
+offset_right = 218.0
+offset_bottom = 58.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Friend Name"
+
+[node name="Your Dialogue" type="Panel" parent="."]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 498.0
+offset_top = 17.0
+offset_right = 948.0
+offset_bottom = 310.0
+mouse_filter = 1
+
+[node name="Your Name" type="Label" parent="Your Dialogue"]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 31.0
+offset_top = 13.0
+offset_right = 218.0
+offset_bottom = 58.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "You"
+
+[node name="MenuButton" type="MenuButton" parent="Your Dialogue"]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 179.0
+offset_right = 168.0
+offset_bottom = 264.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+text = "Eager"
+icon = ExtResource("1_ic5vo")
+icon_alignment = 1
+expand_icon = true
+item_count = 3
+popup/item_0/text = "Positive"
+popup/item_0/id = 0
+popup/item_1/text = "Neutral"
+popup/item_1/id = 1
+popup/item_2/text = "Negative"
+popup/item_2/id = 2
+
+[node name="MenuButton2" type="MenuButton" parent="Your Dialogue"]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 149.0
+offset_top = 179.0
+offset_right = 304.0
+offset_bottom = 264.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+text = "Even"
+icon = ExtResource("2_auakg")
+icon_alignment = 1
+expand_icon = true
+item_count = 3
+popup/item_0/text = "Positive"
+popup/item_0/id = 0
+popup/item_1/text = "Neutral"
+popup/item_1/id = 1
+popup/item_2/text = "Negative"
+popup/item_2/id = 2
+
+[node name="MenuButton3" type="MenuButton" parent="Your Dialogue"]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 285.0
+offset_top = 179.0
+offset_right = 440.0
+offset_bottom = 264.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+text = "Distant"
+icon = ExtResource("3_k1biq")
+icon_alignment = 1
+expand_icon = true
+item_count = 3
+popup/item_0/text = "Positive"
+popup/item_0/id = 0
+popup/item_1/text = "Neutral"
+popup/item_1/id = 1
+popup/item_2/text = "Negative"
+popup/item_2/id = 2
