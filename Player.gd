@@ -51,7 +51,7 @@ func _input(event: InputEvent):
 
 func _rotate_camera(delta: float, sensitivity_y_mod: float = .6, sensitivity_x_mod: float = .6):
 	
-	# Joypad Input (Looking)
+	# Joypad Input (Looking) - 
 	var input = Input.get_vector("look_left", "look_right", "look_down", "look_up")
 	input.y *= -1
 	look_direction += input * .1
