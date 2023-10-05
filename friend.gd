@@ -30,7 +30,8 @@ func _process(delta):
 	_friend_detection(delta)
 			
 func _friend_detection(delta):
-	pass
+	if $"../../Player/Camera3D/RayCast3D".is_colliding():
+		var friend_nearby = true
 		
 func _on_mouse_entered():
 	if convo_state == 0:

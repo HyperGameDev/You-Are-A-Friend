@@ -50,6 +50,7 @@ shadow_enabled = true
 [node name="All Friends" type="Node3D" parent="."]
 
 [node name="Friend" parent="All Friends" instance=ExtResource("1_83ew0")]
+collision_layer = 2
 friend_name = "Jerome"
 
 [node name="Head 1" type="MeshInstance3D" parent="All Friends/Friend"]
@@ -58,6 +59,7 @@ mesh = SubResource("SphereMesh_rbaks")
 
 [node name="Friend2" parent="All Friends" instance=ExtResource("1_83ew0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72511, 0, -1.2445)
+collision_layer = 2
 friend_name = "Lillith"
 
 [node name="Head 2" type="MeshInstance3D" parent="All Friends/Friend2"]
@@ -66,6 +68,7 @@ mesh = SubResource("BoxMesh_buwxc")
 
 [node name="Friend3" parent="All Friends" instance=ExtResource("1_83ew0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64308, 0, -1.2445)
+collision_layer = 2
 friend_name = "Biggo"
 
 [node name="Player" type="CharacterBody3D" parent="."]
