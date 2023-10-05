@@ -1,9 +1,9 @@
 extends StaticBody3D
 
+# This is the same
 @export var friend_name = "Friend"
 
 var convo_state = 0
-var friend_hover = false
 var dialogue_hover = true
 var dialogue_close_hover = false
 
@@ -14,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("Mouse") and friend_hover == true:
+	if Input.is_action_just_pressed("activate") and $"../Player".friend_nearby == true:
 		$"Dialogue".visible = true
 		input_ray_pickable = false
 		convo_state = 1
@@ -26,13 +26,6 @@ func _process(delta):
 			dialogue_close_hover = false
 			convo_state = 0
 			input_ray_pickable = true
-		
-func _on_mouse_entered():
-	if convo_state == 0:
-		friend_hover = true
-
-func _on_mouse_exited():
-	friend_hover = false
 
 func _on_close_panel_top_mouse_entered():
 	dialogue_close_hover = true

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-
+var friend_nearby = false
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -43,6 +43,7 @@ func _physics_process(delta):
 			
 	_rotate_camera(delta)
 	move_and_slide()
+	_detect_friends(delta)
 
 func _input(event: InputEvent):
 	
@@ -64,3 +65,7 @@ func _rotate_camera(delta: float, sensitivity_y_mod: float = .6, sensitivity_x_m
 	
 	# Default look position
 	look_direction = Vector2.ZERO
+	
+func _detect_friends(delta):
+	if $Camera3D/RayCast3D.is_colliding():
+		friend_nearby = true
