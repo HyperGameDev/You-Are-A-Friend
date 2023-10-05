@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4mvyen8kf3dp"]
+[gd_scene load_steps=11 format=3 uid="uid://d4mvyen8kf3dp"]
 
 [ext_resource type="PackedScene" uid="uid://cd1vw3sgqxns0" path="res://friend.tscn" id="1_83ew0"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_uitib"]
@@ -34,12 +34,6 @@ points = PackedVector3Array(30.4762, 0.476191, 30.4762, -30.4762, -0.476191, -30
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_uitib")
 
-[node name="Friend 1" parent="." instance=ExtResource("2_v02sv")]
-
-[node name="Friend 2" parent="." instance=ExtResource("2_v02sv")]
-
-[node name="Friends" parent="." instance=ExtResource("2_v02sv")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3ln1f")
 
@@ -50,19 +44,15 @@ light_energy = 0.75
 shadow_enabled = true
 
 [node name="Friend" parent="." instance=ExtResource("1_83ew0")]
-transform = Transform3D(0.999947, -0.0103147, 0, 0.0103147, 0.999947, 0, 0, 0, 1, 0, 0, 0)
-collision_layer = 2
-friend_name = "Yves"
+friend_name = "Jerome"
 
 [node name="Friend2" parent="." instance=ExtResource("1_83ew0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72511, 0, -1.2445)
-collision_layer = 2
-friend_name = "Jacobi"
+friend_name = "Lillith"
 
 [node name="Friend3" parent="." instance=ExtResource("1_83ew0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.64308, 0, -1.2445)
-collision_layer = 2
-friend_name = "Cat"
+friend_name = "Biggo"
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.29713)
@@ -70,11 +60,6 @@ script = ExtResource("2_u6486")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501914, 0.317316)
-
-[node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0600588, -0.317316)
-target_position = Vector3(0, -1.75, 0)
-collision_mask = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_tgght")
