@@ -3,6 +3,7 @@ extends StaticBody3D
 @export var friend_name = "Friend"
 
 var convo_state = 0
+var friend_nearby = false
 var friend_hover = false
 var dialogue_hover = true
 var dialogue_close_hover = false
@@ -26,6 +27,10 @@ func _process(delta):
 			dialogue_close_hover = false
 			convo_state = 0
 			input_ray_pickable = true
+	_friend_detection(delta)
+			
+func _friend_detection(delta):
+	pass
 		
 func _on_mouse_entered():
 	if convo_state == 0:

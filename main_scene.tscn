@@ -75,6 +75,11 @@ script = ExtResource("2_u6486")
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501914, 0.317316)
 
+[node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -1.75, 0)
+collision_mask = 2
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_tgght")
 

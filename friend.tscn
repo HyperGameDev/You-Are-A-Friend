@@ -17,6 +17,7 @@ input_capture_on_drag = true
 script = ExtResource("1_scmue")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_mukwp")]
+visible = false
 offset_left = -485.544
 offset_right = 490.456
 
