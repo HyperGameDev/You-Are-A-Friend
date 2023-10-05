@@ -4,7 +4,6 @@ extends StaticBody3D
 
 var convo_state = 0
 var friend_nearby = false
-var friend_hover = false
 var dialogue_hover = true
 var dialogue_close_hover = false
 
@@ -15,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("Mouse") and friend_hover == true:
+	if Input.is_action_just_released("activate") and friend_nearby == true:
 		$"Dialogue".visible = true
 		input_ray_pickable = false
 		convo_state = 1
@@ -27,18 +26,13 @@ func _process(delta):
 			dialogue_close_hover = false
 			convo_state = 0
 			input_ray_pickable = true
-	_friend_detection(delta)
-			
-func _friend_detection(delta):
-	if $"../../Player/Camera3D/RayCast3D".is_colliding():
-		var friend_nearby = true
 		
 func _on_mouse_entered():
 	if convo_state == 0:
-		friend_hover = true
+		friend_nearby = true
 
 func _on_mouse_exited():
-	friend_hover = false
+	friend_nearby = false
 
 func _on_close_panel_top_mouse_entered():
 	dialogue_close_hover = true
