@@ -13,11 +13,20 @@ func _ready():
 func _process(_delta):
 	print(DialogueHover["DISTANT"])
 	if $"../..".player_state == $"../..".PlayerStates.DIALOGUE:
-		if Input.is_action_just_pressed("left"):
-			pass
 		_hover_states()
 
 func _hover_states():
+	# Left/Right input changes
+	if Input.is_action_just_pressed("left"):
+			current_hover -= 1
+	if Input.is_action_just_pressed("right"):
+			current_hover += 1
+	if current_hover < 0:
+		current_hover = 2
+	if current_hover > 2:
+		current_hover = 0
+	
+	# Assigning input integer to enum array
 	match current_hover:
 		0:
 			hover_state = DialogueHover["EAGER"]
@@ -25,11 +34,18 @@ func _hover_states():
 			hover_state = DialogueHover["EVEN"]
 		2:
 			hover_state = DialogueHover["DISTANT"]
-				
+	
+	# Applying enum array to button sizes	
 	match hover_state:
 		DialogueHover["EAGER"]:
 			%"Button Eager".scale = Vector2(1.5,1.5)
+			%"Button Even".scale = Vector2(1,1)
+			%"Button Distant".scale = Vector2(1,1)
 		DialogueHover["EVEN"]:
 			%"Button Even".scale = Vector2(1.5,1.5)
+			%"Button Eager".scale = Vector2(1,1)
+			%"Button Distant".scale = Vector2(1,1)
 		DialogueHover["DISTANT"]:
 			%"Button Distant".scale = Vector2(1.5,1.5)
+			%"Button Eager".scale = Vector2(1,1)
+			%"Button Even".scale = Vector2(1,1)
