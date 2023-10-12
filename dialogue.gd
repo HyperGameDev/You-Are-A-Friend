@@ -14,6 +14,17 @@ func _process(_delta):
 	print(DialogueHover["DISTANT"])
 	if $"../..".player_state == $"../..".PlayerStates.DIALOGUE:
 		_hover_states()
+<<<<<<< HEAD
+=======
+	
+	# Left/Right auto select on hold
+	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		press_loop += delta
+		if press_loop > .25:
+			press_loop = 0
+	else:
+		press_loop = 0.0
+>>>>>>> parent of 4353209 (ERROR: Dialogue directions flipped)
 
 func _hover_states():
 	# Left/Right input changes
@@ -29,11 +40,11 @@ func _hover_states():
 	# Assigning input integer to enum array
 	match current_hover:
 		0:
-			hover_state = DialogueHover["EAGER"]
+			hover_state = DialogueHover.EAGER
 		1:
-			hover_state = DialogueHover["EVEN"]
+			hover_state = DialogueHover.EVEN
 		2:
-			hover_state = DialogueHover["DISTANT"]
+			hover_state = DialogueHover.DISTANT
 	
 	# Applying enum array to button sizes	
 	match hover_state:
