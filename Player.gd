@@ -1,8 +1,5 @@
 extends CharacterBody3D
 
-enum PlayerStates {NORMAL, DIALOGUE}
-var player_state = PlayerStates.NORMAL
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -26,7 +23,7 @@ func _process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
-	if player_state == PlayerStates.NORMAL:
+	if %"All Friends".player_state == %"All Friends".PlayerStates.NORMAL:
 		# Get the input direction and handle the movement/deceleration.
 		var input_dir = Input.get_vector("left", "right", "forward", "backward")
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -41,12 +38,12 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _input(event: InputEvent):
-	if player_state == PlayerStates.NORMAL:
+	if %"All Friends".player_state == %"All Friends".PlayerStates.NORMAL:
 		# Mouse Input (Looking)
 		if event is InputEventMouseMotion: look_direction = event.relative * 0.01
 
 func _rotate_camera(delta: float, sensitivity_y_mod: float = .6, sensitivity_x_mod: float = .6):
-	if player_state == PlayerStates.NORMAL:
+	if %"All Friends".player_state == %"All Friends".PlayerStates.NORMAL:
 		# Joypad Input (Looking) - 
 		var input = Input.get_vector("look_left", "look_right", "look_down", "look_up")
 		input.y *= -1

@@ -1,10 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd1vw3sgqxns0"]
+[gd_scene load_steps=4 format=3 uid="uid://cd1vw3sgqxns0"]
 
 [ext_resource type="Script" path="res://friend.gd" id="1_scmue"]
-[ext_resource type="PackedScene" uid="uid://c525tjxkruvkx" path="res://dialogue.tscn" id="2_mukwp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvsre"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_sh0df"]
 height = 3.425
@@ -16,47 +12,6 @@ points = PackedVector3Array(-0.527183, -1.73968, -0.200902, -0.527183, -1.73968,
 input_capture_on_drag = true
 script = ExtResource("1_scmue")
 
-[node name="Dialogue" parent="." instance=ExtResource("2_mukwp")]
-visible = false
-offset_left = -485.544
-offset_right = 490.456
-
-[node name="Close Panel_Top" type="Panel" parent="Dialogue"]
-y_sort_enabled = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -602.0
-offset_top = -334.0
-offset_right = 616.0
-offset_bottom = -3.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tvsre")
-
-[node name="Close Panel_L" type="Panel" parent="Dialogue"]
-y_sort_enabled = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -602.0
-offset_top = -2.0
-offset_right = -489.0
-offset_bottom = 322.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tvsre")
-
-[node name="Close Panel_R" type="Panel" parent="Dialogue"]
-y_sort_enabled = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 495.0
-offset_top = -1.0
-offset_right = 616.0
-offset_bottom = 323.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tvsre")
-
 [node name="Friend" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_sh0df")
 skeleton = NodePath("../..")
@@ -66,12 +21,3 @@ shape = SubResource("ConvexPolygonShape3D_ghtd4")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Dialogue" to="." method="_on_dialogue_mouse_entered"]
-[connection signal="mouse_exited" from="Dialogue" to="." method="_on_dialogue_mouse_exited"]
-[connection signal="gui_input" from="Dialogue/Close Panel_Top" to="." method="_on_close_panel_top_gui_input"]
-[connection signal="mouse_entered" from="Dialogue/Close Panel_Top" to="." method="_on_close_panel_top_mouse_entered"]
-[connection signal="mouse_exited" from="Dialogue/Close Panel_Top" to="." method="_on_close_panel_top_mouse_exited"]
-[connection signal="mouse_entered" from="Dialogue/Close Panel_L" to="." method="_on_close_panel_l_mouse_entered"]
-[connection signal="mouse_exited" from="Dialogue/Close Panel_L" to="." method="_on_close_panel_l_mouse_exited"]
-[connection signal="mouse_entered" from="Dialogue/Close Panel_R" to="." method="_on_close_panel_r_mouse_entered"]
-[connection signal="mouse_exited" from="Dialogue/Close Panel_R" to="." method="_on_close_panel_r_mouse_exited"]
