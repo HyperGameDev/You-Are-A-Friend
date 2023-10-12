@@ -19,6 +19,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("deactivate") and $"Dialogue".visible == true:
 		$"Dialogue".visible = false
+		%Player.player_state = %Player.PlayerStates.NORMAL
 		convo_state = 0
 	_dialogue_exiter(delta)
 	_raycast_checker(delta)
