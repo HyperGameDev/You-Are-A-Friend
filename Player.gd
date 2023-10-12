@@ -17,6 +17,14 @@ var capMouse = true
 
 func _physics_process(delta):
 	if player_state == PlayerStates.NORMAL:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+
+		# Handle Jump.
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+
 		# Get the input direction and handle the movement/deceleration.
 		var input_dir = Input.get_vector("left", "right", "forward", "backward")
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
