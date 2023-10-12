@@ -26,6 +26,7 @@ func _process(delta):
 			press_loop = 0
 	else:
 		press_loop = 0.0
+		
 
 func _hover_states():
 	# Left/Right hover (held)
@@ -49,11 +50,11 @@ func _hover_states():
 	# Assigning input integer to enum array
 	match current_hover:
 		0:
-			hover_state = DialogueHover.EAGER
+			hover_state = DialogueHover["EAGER"]
 		1:
-			hover_state = DialogueHover.EVEN
+			hover_state = DialogueHover["EVEN"]
 		2:
-			hover_state = DialogueHover.DISTANT
+			hover_state = DialogueHover["DISTANT"]
 	
 	# Applying enum array to button sizes	
 	match hover_state:
