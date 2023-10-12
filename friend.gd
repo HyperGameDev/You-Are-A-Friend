@@ -9,7 +9,6 @@ var friend_nearby = false
 func _ready():
 	$"DialogueBox/Friend Dialogue/Friend Name".set_text(friend_name)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("activate") and friend_nearby == true:

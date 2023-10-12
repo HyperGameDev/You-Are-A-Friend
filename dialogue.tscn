@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c525tjxkruvkx"]
+[gd_scene load_steps=7 format=3 uid="uid://c525tjxkruvkx"]
 
 [ext_resource type="Texture2D" uid="uid://cwh6x5humbib6" path="res://UI images/border_responses.png" id="1_ic5vo"]
+[ext_resource type="Script" path="res://dialogue.gd" id="1_rkpiv"]
 [ext_resource type="Texture2D" uid="uid://pjfi6yg147ka" path="res://UI images/border_responses_4.png" id="2_auakg"]
 [ext_resource type="Texture2D" uid="uid://cjtfel8y20vhk" path="res://UI images/border_responses_2.png" id="3_k1biq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67yl"]
 bg_color = Color(0.356863, 0, 0.0509804, 1)
 
-[node name="Dialogue" type="Panel"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbclm"]
+
+[node name="DialogueBox" type="Panel"]
 y_sort_enabled = true
 anchors_preset = -1
 anchor_left = 0.498
@@ -19,6 +22,18 @@ offset_top = -325.0
 offset_right = 488.304
 offset_bottom = -3.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d67yl")
+script = ExtResource("1_rkpiv")
+
+[node name="Close" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 200
+layout_mode = 0
+offset_left = 866.0
+offset_top = 9.0
+offset_right = 970.0
+offset_bottom = 83.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nbclm")
 
 [node name="Friend Dialogue" type="Panel" parent="."]
 y_sort_enabled = true
@@ -48,6 +63,7 @@ offset_top = 17.0
 offset_right = 948.0
 offset_bottom = 310.0
 mouse_filter = 1
+metadata/_edit_lock_ = true
 
 [node name="Your Name" type="Label" parent="Your Dialogue"]
 y_sort_enabled = true
@@ -60,13 +76,15 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 30
 text = "You"
 
-[node name="MenuButton" type="MenuButton" parent="Your Dialogue"]
+[node name="Button Eager" type="MenuButton" parent="Your Dialogue"]
+unique_name_in_owner = true
 y_sort_enabled = true
 layout_mode = 0
-offset_left = 13.0
-offset_top = 179.0
+offset_left = 16.0
+offset_top = 188.0
 offset_right = 168.0
-offset_bottom = 264.0
+offset_bottom = 268.0
+pivot_offset = Vector2(80, 40)
 mouse_filter = 1
 theme_override_font_sizes/font_size = 25
 text = "Eager"
@@ -81,13 +99,15 @@ popup/item_1/id = 1
 popup/item_2/text = "Negative"
 popup/item_2/id = 2
 
-[node name="MenuButton2" type="MenuButton" parent="Your Dialogue"]
+[node name="Button Even" type="MenuButton" parent="Your Dialogue"]
+unique_name_in_owner = true
 y_sort_enabled = true
 layout_mode = 0
-offset_left = 149.0
-offset_top = 179.0
-offset_right = 304.0
-offset_bottom = 264.0
+offset_left = 150.0
+offset_top = 188.0
+offset_right = 302.0
+offset_bottom = 268.0
+pivot_offset = Vector2(74, 40)
 mouse_filter = 1
 theme_override_font_sizes/font_size = 25
 text = "Even"
@@ -102,13 +122,15 @@ popup/item_1/id = 1
 popup/item_2/text = "Negative"
 popup/item_2/id = 2
 
-[node name="MenuButton3" type="MenuButton" parent="Your Dialogue"]
+[node name="Button Distant" type="MenuButton" parent="Your Dialogue"]
+unique_name_in_owner = true
 y_sort_enabled = true
 layout_mode = 0
-offset_left = 285.0
-offset_top = 179.0
-offset_right = 440.0
-offset_bottom = 264.0
+offset_left = 288.0
+offset_top = 188.0
+offset_right = 432.0
+offset_bottom = 268.0
+pivot_offset = Vector2(72, 40)
 mouse_filter = 1
 theme_override_font_sizes/font_size = 25
 text = "Distant"
