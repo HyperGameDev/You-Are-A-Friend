@@ -14,6 +14,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("activate") and friend_nearby == true:
 		$"Dialogue".visible = true
+		%Player.player_state = %Player.PlayerStates.DIALOGUE
 		convo_state = 1
 		
 	if Input.is_action_just_pressed("deactivate") and $"Dialogue".visible == true:
