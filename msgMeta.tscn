@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://sajdnnb84ge8"]
+
+[ext_resource type="Texture2D" path="res://UI images/Meta_Response_Boxes/meta_response_4.png" id="1_o42ac"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj6xi"]
+texture = ExtResource("1_o42ac")
+region_rect = Rect2(0, 0, 1752, 712)
+
+[node name="Button Meta" type="Panel"]
+custom_minimum_size = Vector2(120, 48)
+offset_left = 672.527
+offset_top = 72.6616
+offset_right = 792.527
+offset_bottom = 120.662
+pivot_offset = Vector2(63.8939, 29.2772)
+theme_override_styles/panel = SubResource("StyleBoxTexture_sj6xi")
+
+[node name="Meta Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.8037
+offset_top = 12.188
+offset_right = 90.8037
+offset_bottom = 38.188
+text = "Positive"
+horizontal_alignment = 1

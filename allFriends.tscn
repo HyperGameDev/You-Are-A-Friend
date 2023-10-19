@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://allFriends.gd" id="1_ubb7h"]
 [ext_resource type="PackedScene" uid="uid://cd1vw3sgqxns0" path="res://friend.tscn" id="2_tdfio"]
-[ext_resource type="PackedScene" uid="uid://c525tjxkruvkx" path="res://dialogue.tscn" id="3_ohy3d"]
+[ext_resource type="PackedScene" uid="uid://c525tjxkruvkx" path="res://Dialogue/dailogue.tscn" id="3_ohy3d"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rbaks"]
 
