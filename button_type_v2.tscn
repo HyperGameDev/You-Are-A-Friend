@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6w15cvif8leh"]
+
+[ext_resource type="Texture2D" uid="uid://cwh6x5humbib6" path="res://UI images/border_responses.png" id="1_j5cmp"]
+
+[node name="Button_Type" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 338.0
+offset_top = 37.0
+offset_right = 594.0
+offset_bottom = 253.0
+pivot_offset = Vector2(136, 112)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.05176e-05
+offset_top = -16.0
+offset_right = 3.05176e-05
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 120)
+texture_normal = ExtResource("1_j5cmp")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Type Label" type="Label" parent="TextureButton"]
+unique_name_in_owner = true
+offset_left = 53.0
+offset_top = 83.0
+offset_right = 203.0
+offset_bottom = 162.0
+theme_override_font_sizes/font_size = 50
+text = "Label"
+horizontal_alignment = 1

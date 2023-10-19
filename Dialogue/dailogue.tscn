@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c525tjxkruvkx"]
 
 [ext_resource type="Script" path="res://Dialogue/msg_type.gd" id="1_eri8o"]
-[ext_resource type="PackedScene" uid="uid://jkg7xc5qith4" path="res://button_type.tscn" id="2_3d1qy"]
+[ext_resource type="PackedScene" uid="uid://c6w15cvif8leh" path="res://button_type_v2.tscn" id="2_p60nv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67yl"]
 bg_color = Color(0.356863, 0, 0.0509804, 1)
@@ -89,16 +89,19 @@ pivot_offset = Vector2(216, 46)
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Button Eager" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
+[node name="Button Eager" parent="HBoxContainer" instance=ExtResource("2_p60nv")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="Button Even" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
+[node name="Button Even" parent="HBoxContainer" instance=ExtResource("2_p60nv")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="Button Distant" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
+[node name="Button Distant" parent="HBoxContainer" instance=ExtResource("2_p60nv")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Button Positive" type="Panel" parent="."]

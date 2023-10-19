@@ -62,7 +62,7 @@ func _hover_states():
 			msg_type_hover_state = Msg_Meta_Hover.DISTANT
 	
 	# Applying enum array to button sizes	
-	match msg_type_hover_state:
+#	match msg_type_hover_state:
 		Msg_Meta_Hover["EAGER"]:
 			%"Button Eager".scale = Vector2(1.5,1.5)
 			%"Button Even".scale = Vector2(1,1)
