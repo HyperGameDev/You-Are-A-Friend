@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c525tjxkruvkx"]
+[gd_scene load_steps=16 format=3 uid="uid://c525tjxkruvkx"]
 
 [ext_resource type="Script" path="res://Dialogue/msg_type.gd" id="1_eri8o"]
 [ext_resource type="Texture2D" uid="uid://cjtfel8y20vhk" path="res://UI images/border_responses_2.png" id="2_xip8s"]
 [ext_resource type="Texture2D" uid="uid://bc0p8wscmt7u8" path="res://UI images/border_responses_3.png" id="3_polmp"]
+[ext_resource type="Texture2D" uid="uid://d08cb6i1mhdh3" path="res://UI images/meta_buttons/meta_response_4.png" id="4_0kg2p"]
+[ext_resource type="Texture2D" uid="uid://dwd1ghax1qatx" path="res://UI images/meta_buttons/meta_response_2.png" id="5_1kemd"]
+[ext_resource type="Texture2D" uid="uid://dp17s38b6mh5l" path="res://UI images/meta_buttons/meta_response_1.png" id="6_1jyc5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67yl"]
 bg_color = Color(0.356863, 0, 0.0509804, 1)
@@ -20,6 +23,15 @@ texture = ExtResource("2_xip8s")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwq8j"]
 texture = ExtResource("3_polmp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_480s5"]
+texture = ExtResource("4_0kg2p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx1f4"]
+texture = ExtResource("5_1kemd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0dcc"]
+texture = ExtResource("6_1jyc5")
 
 [node name="DialogueBox" type="Panel"]
 y_sort_enabled = true
@@ -155,3 +167,36 @@ offset_right = 100.0
 offset_bottom = 63.0
 theme_override_font_sizes/font_size = 25
 text = "Distant"
+
+[node name="Button Positive" type="Panel" parent="."]
+custom_minimum_size = Vector2(1750, 720)
+layout_mode = 0
+offset_left = -181.841
+offset_top = -274.824
+offset_right = 1568.16
+offset_bottom = 445.176
+scale = Vector2(0.075, 0.075)
+pivot_offset = Vector2(913.342, 367.377)
+theme_override_styles/panel = SubResource("StyleBoxTexture_480s5")
+
+[node name="Button Neutral" type="Panel" parent="."]
+custom_minimum_size = Vector2(1750, 720)
+layout_mode = 0
+offset_left = -181.841
+offset_top = -226.824
+offset_right = 1568.16
+offset_bottom = 493.176
+scale = Vector2(0.075, 0.075)
+pivot_offset = Vector2(913.342, 367.377)
+theme_override_styles/panel = SubResource("StyleBoxTexture_xx1f4")
+
+[node name="Button Negative" type="Panel" parent="."]
+custom_minimum_size = Vector2(1750, 720)
+layout_mode = 0
+offset_left = -181.841
+offset_top = -178.824
+offset_right = 1568.16
+offset_bottom = 541.176
+scale = Vector2(0.075, 0.075)
+pivot_offset = Vector2(913.342, 367.377)
+theme_override_styles/panel = SubResource("StyleBoxTexture_g0dcc")
