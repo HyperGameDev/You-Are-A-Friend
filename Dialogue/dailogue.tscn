@@ -1,25 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://c525tjxkruvkx"]
+[gd_scene load_steps=8 format=3 uid="uid://c525tjxkruvkx"]
 
 [ext_resource type="Script" path="res://Dialogue/msg_type.gd" id="1_eri8o"]
-[ext_resource type="Texture2D" uid="uid://cjtfel8y20vhk" path="res://UI images/border_responses_2.png" id="2_xip8s"]
-[ext_resource type="Texture2D" uid="uid://bc0p8wscmt7u8" path="res://UI images/border_responses_3.png" id="3_polmp"]
+[ext_resource type="PackedScene" uid="uid://jkg7xc5qith4" path="res://button_type.tscn" id="2_3d1qy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67yl"]
 bg_color = Color(0.356863, 0, 0.0509804, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbclm"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q4mr8"]
-load_path = "res://.godot/imported/border_responses_4.png-592a138d8f12154af86e9293127d18b6.ctex"
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_480s5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x7e5n"]
-texture = SubResource("CompressedTexture2D_q4mr8")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx1f4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hxf0"]
-texture = ExtResource("2_xip8s")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lwq8j"]
-texture = ExtResource("3_polmp")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0dcc"]
 
 [node name="DialogueBox" type="Panel"]
 y_sort_enabled = true
@@ -86,72 +79,61 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 30
 text = "You"
 
-[node name="Button Eager" type="Panel" parent="Your Dialogue"]
-unique_name_in_owner = true
-y_sort_enabled = true
-custom_minimum_size = Vector2(111, 0)
-layout_mode = 2
-offset_left = 40.0
-offset_top = 207.0
-offset_right = 151.0
-offset_bottom = 281.0
-pivot_offset = Vector2(52, 34)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_x7e5n")
-
-[node name="Eager Label" type="Label" parent="Your Dialogue/Button Eager"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 17.0
-offset_right = 102.0
-offset_bottom = 62.0
-theme_override_font_sizes/font_size = 25
-text = "Eager
-"
-
-[node name="Button Even" type="Panel" parent="Your Dialogue"]
-unique_name_in_owner = true
-y_sort_enabled = true
-custom_minimum_size = Vector2(111, 0)
-layout_mode = 2
-offset_left = 176.0
+offset_left = 506.0
 offset_top = 207.0
-offset_right = 287.0
-offset_bottom = 281.0
-pivot_offset = Vector2(52, 34)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_8hxf0")
+offset_right = 942.0
+offset_bottom = 303.0
+pivot_offset = Vector2(216, 46)
+alignment = 1
 
-[node name="Even Label" type="Label" parent="Your Dialogue/Button Even"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 18.0
-offset_right = 109.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 25
-text = "Even"
-
-[node name="Button Distant" type="Panel" parent="Your Dialogue"]
+[node name="Button Eager" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
 unique_name_in_owner = true
-y_sort_enabled = true
-custom_minimum_size = Vector2(111, 0)
+custom_minimum_size = Vector2(111, 74)
 layout_mode = 2
-offset_left = 312.0
-offset_top = 207.0
-offset_right = 423.0
-offset_bottom = 281.0
-pivot_offset = Vector2(52, 34)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_lwq8j")
+button_type = "Eager"
 
-[node name="Distant Label" type="Label" parent="Your Dialogue/Button Distant"]
+[node name="Button Even" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(111, 74)
+layout_mode = 2
+button_type = "Even"
+
+[node name="Button Distant" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(111, 74)
+layout_mode = 2
+button_type = "Distant"
+
+[node name="Button Positive" type="Panel" parent="."]
+custom_minimum_size = Vector2(1750, 720)
+layout_mode = 2
+offset_left = -181.841
+offset_top = -274.824
+offset_right = 1568.16
+offset_bottom = 445.176
+pivot_offset = Vector2(913.342, 367.377)
+theme_override_styles/panel = SubResource("StyleBoxTexture_480s5")
+
+[node name="Button Neutral" type="Panel" parent="."]
+custom_minimum_size = Vector2(1750, 720)
 layout_mode = 0
-offset_left = 12.0
-offset_top = 18.0
-offset_right = 100.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 25
-text = "Distant"
+offset_left = -181.841
+offset_top = -226.824
+offset_right = 1568.16
+offset_bottom = 493.176
+scale = Vector2(0.075, 0.075)
+pivot_offset = Vector2(913.342, 367.377)
+theme_override_styles/panel = SubResource("StyleBoxTexture_xx1f4")
+
+[node name="Button Negative" type="Panel" parent="."]
+custom_minimum_size = Vector2(1750, 720)
+layout_mode = 0
+offset_left = -181.841
+offset_top = -178.824
+offset_right = 1568.16
+offset_bottom = 541.176
+scale = Vector2(0.075, 0.075)
+pivot_offset = Vector2(913.342, 367.377)
+theme_override_styles/panel = SubResource("StyleBoxTexture_g0dcc")

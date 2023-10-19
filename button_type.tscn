@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://jkg7xc5qith4"]
+
+[ext_resource type="Script" path="res://button_type.gd" id="1_tdoq5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q4mr8"]
+load_path = "res://.godot/imported/border_responses_4.png-592a138d8f12154af86e9293127d18b6.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x7e5n"]
+texture = SubResource("CompressedTexture2D_q4mr8")
+
+[node name="Button Type" type="Panel"]
+y_sort_enabled = true
+custom_minimum_size = Vector2(111, 0)
+offset_left = 40.0
+offset_top = 207.0
+offset_right = 151.0
+offset_bottom = 281.0
+pivot_offset = Vector2(52, 34)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_x7e5n")
+script = ExtResource("1_tdoq5")
+
+[node name="Type Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 102.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 25
+text = "Eager
+"
