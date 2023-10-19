@@ -86,25 +86,20 @@ offset_top = 207.0
 offset_right = 942.0
 offset_bottom = 303.0
 pivot_offset = Vector2(216, 46)
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Button Eager" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(111, 74)
 layout_mode = 2
-button_type = "Eager"
 
 [node name="Button Even" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(111, 74)
 layout_mode = 2
-button_type = "Even"
 
 [node name="Button Distant" parent="HBoxContainer" instance=ExtResource("2_3d1qy")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(111, 74)
 layout_mode = 2
-button_type = "Distant"
 
 [node name="Button Positive" type="Panel" parent="."]
 custom_minimum_size = Vector2(1750, 720)
