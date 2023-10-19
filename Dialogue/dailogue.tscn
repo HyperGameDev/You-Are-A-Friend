@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c525tjxkruvkx"]
+[gd_scene load_steps=10 format=3 uid="uid://c525tjxkruvkx"]
 
 [ext_resource type="Script" path="res://Dialogue/msg_type.gd" id="1_eri8o"]
 [ext_resource type="Texture2D" uid="uid://cjtfel8y20vhk" path="res://UI images/border_responses_2.png" id="2_xip8s"]
 [ext_resource type="Texture2D" uid="uid://bc0p8wscmt7u8" path="res://UI images/border_responses_3.png" id="3_polmp"]
-[ext_resource type="Script" path="res://Dialogue/msg_meta.gd" id="4_6dm0p"]
-[ext_resource type="PackedScene" uid="uid://sajdnnb84ge8" path="res://msgMeta.tscn" id="4_njh8s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67yl"]
 bg_color = Color(0.356863, 0, 0.0509804, 1)
@@ -157,29 +155,3 @@ offset_right = 100.0
 offset_bottom = 63.0
 theme_override_font_sizes/font_size = 25
 text = "Distant"
-
-[node name="Panel" parent="." instance=ExtResource("4_njh8s")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 120.0
-offset_bottom = 48.0004
-script = ExtResource("4_6dm0p")
-
-[node name="Button Neutral" parent="." instance=ExtResource("4_njh8s")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 120.0
-offset_bottom = 48.0004
-script = ExtResource("4_6dm0p")
-
-[node name="Button Negative" parent="." instance=ExtResource("4_njh8s")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 120.0
-offset_bottom = 48.0004
-script = ExtResource("4_6dm0p")
